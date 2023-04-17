@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Shader/ShapeEffect.gdshader" type="Shader" id=1]
+
+[sub_resource type="ShaderMaterial" id=1]
+shader = ExtResource( 1 )
+shader_param/inner = 1.0
+shader_param/outer = 1.0
+shader_param/color = Plane( 1, 1, 1, 0 )
+
+[sub_resource type="CubeMesh" id=2]
+material = SubResource( 1 )
+
+[node name="Spatial" type="Spatial"]
+
+[node name="MeshInstance" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0117942, 0.00506353, -0.0063026 )
+mesh = SubResource( 2 )

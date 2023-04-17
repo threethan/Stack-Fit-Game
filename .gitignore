@@ -1,0 +1,15 @@
+
+# Godot-specific ignores
+.import/
+export.cfg
+export_presets.cfg
+# Additional ignores
+android/
+Export/
+
+# Mono-specific ignores
+.mono/
+data_*/
+
+# Has semi-private keys
+AnalyticsManager.gd

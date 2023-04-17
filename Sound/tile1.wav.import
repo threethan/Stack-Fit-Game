@@ -1,0 +1,23 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/tile1.wav-4389409999ad0a0b36d58972f7541a3c.sample"
+
+[deps]
+
+source_file="res://Sound/tile1.wav"
+dest_files=[ "res://.import/tile1.wav-4389409999ad0a0b36d58972f7541a3c.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=true
+force/max_rate_hz=22050.0
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=1

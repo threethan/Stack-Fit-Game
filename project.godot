@@ -1,0 +1,145 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=4
+
+_global_script_classes=[ {
+"base": "MeshInstance",
+"class": "ColorfulMeshInstance",
+"language": "GDScript",
+"path": "res://Script/ColorfulMeshInstance.gd"
+}, {
+"base": "GameManagerCore",
+"class": "GameManager",
+"language": "GDScript",
+"path": "res://Script/GameManager.gd"
+}, {
+"base": "Spatial",
+"class": "GameManagerCore",
+"language": "GDScript",
+"path": "res://Script/GameManagerCore.gd"
+}, {
+"base": "GameManager",
+"class": "PlayerStack",
+"language": "GDScript",
+"path": "res://Script/PlayerStack.gd"
+}, {
+"base": "ColorfulMeshInstance",
+"class": "ShapeObject",
+"language": "GDScript",
+"path": "res://Script/ShapeObject.gd"
+}, {
+"base": "ShapeObject",
+"class": "ShapedHole",
+"language": "GDScript",
+"path": "res://Script/ShapeHole.gd"
+}, {
+"base": "RigidBody",
+"class": "StackedShape",
+"language": "GDScript",
+"path": "res://Script/StackedShape.gd"
+}, {
+"base": "ShapeObject",
+"class": "StackedShapeShape",
+"language": "GDScript",
+"path": "res://Script/StackedShapeShape.gd"
+} ]
+_global_script_class_icons={
+"ColorfulMeshInstance": "",
+"GameManager": "",
+"GameManagerCore": "",
+"PlayerStack": "",
+"ShapeObject": "",
+"ShapedHole": "",
+"StackedShape": "",
+"StackedShapeShape": ""
+}
+
+[application]
+
+config/name="Stack Fit"
+run/main_scene="res://ChainLoad.tscn"
+boot_splash/image="res://Icon/splash_256x256.png"
+boot_splash/bg_color=Color( 0.52549, 0.372549, 0.694118, 1 )
+config/icon="res://Icon/generic_512x512.png"
+
+[autoload]
+
+AnalyticsManager="*res://AnalyticsManager.gd"
+
+[display]
+
+window/size/width=450
+window/size/height=800
+window/size/test_width=720
+window/size/test_height=1280
+window/dpi/allow_hidpi=true
+window/handheld/orientation="portrait"
+window/ios/hide_home_indicator=false
+window/stretch/mode="2d"
+window/stretch/aspect="expand"
+
+[gui]
+
+common/drop_mouse_on_gui_input_disabled=true
+
+[input]
+
+debug_collapse={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":67,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
+ ]
+}
+debug_screen_capture={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777245,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
+ ]
+}
+add={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":0,"physical_scancode":65,"unicode":0,"echo":false,"script":null)
+, Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"button_mask":0,"position":Vector2( 0, 0 ),"global_position":Vector2( 0, 0 ),"factor":1.0,"button_index":8,"pressed":false,"doubleclick":false,"script":null)
+ ]
+}
+
+[physics]
+
+common/physics_fps=30
+3d/active_soft_world=false
+3d/default_gravity=10.0
+common/physics_interpolation=true
+common/enable_object_picking=false
+
+[rendering]
+
+quality/driver/driver_name="GLES2"
+quality/intended_usage/framebuffer_allocation=0
+quality/intended_usage/framebuffer_allocation.mobile=0
+vram_compression/import_s3tc=false
+vram_compression/import_etc=true
+vram_compression/import_etc2=false
+quality/directional_shadow/size=256
+quality/directional_shadow/size.mobile=256
+quality/shadow_atlas/size=256
+quality/shadow_atlas/size.mobile=256
+quality/shadow_atlas/quadrant_0_subdiv=0
+quality/shadow_atlas/quadrant_1_subdiv=0
+quality/shadow_atlas/quadrant_2_subdiv=0
+quality/shadow_atlas/quadrant_3_subdiv=0
+quality/shadows/filter_mode=0
+quality/reflections/texture_array_reflections=false
+quality/reflections/high_quality_ggx=false
+quality/shading/force_vertex_shading=true
+quality/shading/force_lambert_over_burley=true
+quality/shading/force_blinn_over_ggx=true
+quality/depth_prepass/enable=false
+quality/filters/anisotropic_filter_level=1
+quality/skinning/software_skinning_fallback=false
+quality/lightmapping/use_bicubic_sampling=false
+quality/depth/hdr=false
+environment/default_environment="res://Asset/default_env.tres"

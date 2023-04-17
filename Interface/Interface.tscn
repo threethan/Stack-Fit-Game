@@ -1,0 +1,571 @@
+[gd_scene load_steps=27 format=2]
+
+[ext_resource path="res://Asset/main_theme.tres" type="Theme" id=1]
+[ext_resource path="res://Asset/Font/Montserrat-ExtraLight.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://Asset/Font/Montserrat-Medium.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://Interface/Interface.gd" type="Script" id=4]
+[ext_resource path="res://Asset/Font/Montserrat-Light.ttf" type="DynamicFontData" id=5]
+[ext_resource path="res://Asset/Font/Montserrat-ExtraBold.ttf" type="DynamicFontData" id=6]
+[ext_resource path="res://Interface/NightThemeButton.gd" type="Script" id=7]
+[ext_resource path="res://Interface/Slider.gdshader" type="Shader" id=8]
+[ext_resource path="res://Asset/Font/Montserrat-Regular.ttf" type="DynamicFontData" id=9]
+[ext_resource path="res://Interface/BatterySaverButton.gd" type="Script" id=10]
+
+[sub_resource type="StyleBoxEmpty" id=11]
+
+[sub_resource type="InputEventAction" id=19]
+action = "add"
+pressed = true
+
+[sub_resource type="ShortCut" id=20]
+shortcut = SubResource( 19 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 30
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=10]
+size = 25
+outline_size = 1
+use_filter = true
+extra_spacing_top = 5
+extra_spacing_bottom = 5
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=8]
+size = 39
+outline_size = 1
+outline_color = Color( 1, 1, 1, 0.498039 )
+extra_spacing_space = -7
+font_data = ExtResource( 6 )
+
+[sub_resource type="StyleBoxEmpty" id=9]
+
+[sub_resource type="DynamicFont" id=21]
+size = 90
+use_mipmaps = true
+use_filter = true
+font_data = ExtResource( 3 )
+
+[sub_resource type="Animation" id=6]
+resource_name = "EndGame"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Bottom:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 3.13834, 3.13834 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("GameOverBg:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0.5, 2.3 ),
+"transitions": PoolRealArray( 3.13834, 3.13834 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("GameOverBg/RestartButton:disabled")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("GameOverBg/RestartButton:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 2, 3 ),
+"transitions": PoolRealArray( 2, 2, 2 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Bottom/Tutorial:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("Score:rect_position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0, 3 ),
+"transitions": PoolRealArray( 2.73208, 2.73208 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( 0, 170 ) ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("GameOverBg/RestartButton:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0.6, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("GameOverBg:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("Score/CenterContainer/HBoxContainer:modulate")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( 3, 3 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=7]
+resource_name = "FadeElements"
+length = 7.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Bottom/Tutorial:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5, 3 ),
+"transitions": PoolRealArray( 0.615572, 0.615572, 0.615572 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Score/CenterContainer/HBoxContainer:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.5, 3 ),
+"transitions": PoolRealArray( 0.63728, 0.63728, 0.63728 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+
+[sub_resource type="DynamicFont" id=1]
+size = 110
+outline_size = 2
+use_mipmaps = true
+use_filter = true
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 24
+outline_size = 1
+font_data = ExtResource( 5 )
+
+[sub_resource type="DynamicFont" id=18]
+size = 27
+outline_size = 1
+use_mipmaps = true
+use_filter = true
+font_data = ExtResource( 9 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 30
+outline_size = 1
+extra_spacing_top = 5
+extra_spacing_bottom = -3
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=12]
+size = 50
+outline_size = 1
+font_data = ExtResource( 3 )
+
+[sub_resource type="ShaderMaterial" id=17]
+shader = ExtResource( 8 )
+
+[node name="Interface" type="Control"]
+pause_mode = 2
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+theme = ExtResource( 1 )
+script = ExtResource( 4 )
+
+[node name="Bottom" type="Control" parent="."]
+pause_mode = 2
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 46.0
+margin_top = -103.0
+margin_right = -43.0
+margin_bottom = -43.0
+mouse_filter = 2
+
+[node name="NextProgress" type="ProgressBar" parent="Bottom"]
+pause_mode = 2
+visible = false
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -1.0
+margin_top = -2.0
+margin_right = -1.0
+margin_bottom = 1.0
+mouse_filter = 2
+value = 5.0
+percent_visible = false
+
+[node name="NextWord" type="Button" parent="Bottom"]
+pause_mode = 2
+visible = false
+margin_left = -3.0
+margin_top = 21.0
+margin_right = 68.0
+margin_bottom = 59.0
+custom_styles/hover = SubResource( 11 )
+custom_styles/pressed = SubResource( 11 )
+custom_styles/focus = SubResource( 11 )
+custom_styles/disabled = SubResource( 11 )
+custom_styles/normal = SubResource( 11 )
+shortcut = SubResource( 20 )
+text = "Next"
+
+[node name="NextNumber" type="Label" parent="Bottom"]
+pause_mode = 2
+visible = false
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -67.0
+margin_top = -38.0
+custom_fonts/font = SubResource( 3 )
+text = "5.0s"
+align = 2
+
+[node name="Tutorial" type="Control" parent="Bottom"]
+pause_mode = 2
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -46.0
+margin_top = -220.0
+margin_right = 43.0
+margin_bottom = -31.0
+mouse_filter = 2
+
+[node name="Label" type="Label" parent="Bottom/Tutorial"]
+pause_mode = 2
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 4.0
+margin_bottom = -20.0
+custom_fonts/font = SubResource( 10 )
+text = "↔ Move and line up your Stack
+↕ Change order to match shapes
+-■ Fill holes to score & relax ■-"
+align = 1
+
+[node name="PauseButton" type="Button" parent="Bottom"]
+pause_mode = 2
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -51.0
+margin_top = -55.0
+custom_fonts/font = SubResource( 8 )
+custom_styles/hover = SubResource( 9 )
+custom_styles/pressed = SubResource( 9 )
+custom_styles/focus = SubResource( 9 )
+custom_styles/disabled = SubResource( 9 )
+custom_styles/normal = SubResource( 9 )
+text = "I I"
+
+[node name="GameOverBg" type="ColorRect" parent="."]
+pause_mode = 2
+visible = false
+modulate = Color( 1, 1, 1, 0 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 0.439216 )
+
+[node name="Label" type="Label" parent="GameOverBg"]
+pause_mode = 2
+anchor_right = 1.0
+margin_top = 30.0
+margin_bottom = 162.0
+text = "Well Played."
+align = 1
+valign = 1
+
+[node name="RestartButton" type="Button" parent="GameOverBg"]
+pause_mode = 2
+modulate = Color( 1, 1, 1, 0 )
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 11.0
+margin_top = -285.0
+margin_right = -10.0
+margin_bottom = -99.0
+custom_colors/font_color_disabled = Color( 1, 1, 1, 1 )
+custom_colors/font_color_focus = Color( 1, 1, 1, 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_hover = Color( 1, 1, 1, 1 )
+custom_colors/font_color_pressed = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 21 )
+disabled = true
+text = "Again?"
+
+[node name="OptionsButton" type="Button" parent="GameOverBg/RestartButton"]
+pause_mode = 2
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 7.0
+margin_bottom = 89.0
+custom_colors/font_color_disabled = Color( 1, 1, 1, 1 )
+custom_colors/font_color_focus = Color( 1, 1, 1, 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "Options"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+pause_mode = 2
+anims/EndGame = SubResource( 6 )
+anims/FadeElements = SubResource( 7 )
+
+[node name="Score" type="Label" parent="."]
+pause_mode = 2
+anchor_right = 1.0
+margin_bottom = 278.0
+rect_pivot_offset = Vector2( 100, 50 )
+custom_fonts/font = SubResource( 1 )
+text = "0"
+align = 1
+valign = 1
+
+[node name="CenterContainer" type="CenterContainer" parent="Score"]
+pause_mode = 2
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -62.0
+margin_top = 119.0
+margin_right = 58.0
+margin_bottom = 1.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Score/CenterContainer"]
+pause_mode = 2
+margin_left = 19.0
+margin_top = 63.0
+margin_right = 101.0
+margin_bottom = 97.0
+custom_constants/separation = 0
+
+[node name="Label" type="Label" parent="Score/CenterContainer/HBoxContainer"]
+pause_mode = 2
+margin_top = 1.0
+margin_right = 64.0
+margin_bottom = 33.0
+rect_min_size = Vector2( 0, 32 )
+custom_fonts/font = SubResource( 4 )
+text = "Best: "
+valign = 1
+
+[node name="Highscore" type="Label" parent="Score/CenterContainer/HBoxContainer"]
+pause_mode = 2
+margin_left = 64.0
+margin_right = 82.0
+margin_bottom = 34.0
+custom_fonts/font = SubResource( 18 )
+text = "0"
+valign = 1
+
+[node name="ScoreWord" type="Label" parent="Score"]
+pause_mode = 2
+anchor_right = 1.0
+margin_bottom = 96.0
+rect_min_size = Vector2( 0, 30 )
+rect_pivot_offset = Vector2( 134, 35 )
+custom_fonts/font = SubResource( 2 )
+text = "SCORE"
+align = 1
+valign = 2
+
+[node name="PauseBg" type="ColorRect" parent="."]
+pause_mode = 2
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 0.717647 )
+
+[node name="Label" type="Label" parent="PauseBg"]
+pause_mode = 2
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 19.0
+margin_bottom = -702.0
+custom_fonts/font = SubResource( 12 )
+text = "PAUSED"
+align = 1
+valign = 1
+
+[node name="RestartButton" type="Button" parent="PauseBg"]
+pause_mode = 2
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 11.0
+margin_top = -193.0
+margin_right = -10.0
+margin_bottom = -131.0
+custom_colors/font_color_disabled = Color( 1, 1, 1, 1 )
+custom_colors/font_color_focus = Color( 1, 1, 1, 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "Restart Game"
+
+[node name="ResumeButton" type="Button" parent="PauseBg"]
+pause_mode = 2
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 11.0
+margin_top = -122.0
+margin_right = -10.0
+margin_bottom = -12.0
+custom_colors/font_color_disabled = Color( 1, 1, 1, 1 )
+custom_colors/font_color_focus = Color( 1, 1, 1, 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_hover = Color( 1, 1, 1, 1 )
+custom_colors/font_color_pressed = Color( 1, 1, 1, 1 )
+text = "Resume Game"
+
+[node name="NightThemeButton" type="Button" parent="PauseBg"]
+pause_mode = 2
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 11.0
+margin_top = -340.0
+margin_right = -10.0
+margin_bottom = -275.0
+custom_colors/font_color_disabled = Color( 1, 1, 1, 1 )
+custom_colors/font_color_focus = Color( 1, 1, 1, 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_hover = Color( 1, 1, 1, 1 )
+custom_colors/font_color_pressed = Color( 1, 1, 1, 1 )
+text = "Night Mode"
+script = ExtResource( 7 )
+
+[node name="BatterySaverButton" type="Button" parent="PauseBg"]
+pause_mode = 2
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 11.0
+margin_top = -267.0
+margin_right = -10.0
+margin_bottom = -202.0
+custom_colors/font_color_disabled = Color( 1, 1, 1, 1 )
+custom_colors/font_color_focus = Color( 1, 1, 1, 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_hover = Color( 1, 1, 1, 1 )
+custom_colors/font_color_pressed = Color( 1, 1, 1, 1 )
+text = "Battery Saver"
+script = ExtResource( 10 )
+
+[node name="SensSliderH" type="HSlider" parent="PauseBg"]
+material = SubResource( 17 )
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 34.0
+margin_top = -564.0
+margin_right = -33.0
+margin_bottom = -532.0
+min_value = -1.0
+max_value = 1.0
+step = 0.1
+
+[node name="Label2" type="Label" parent="PauseBg/SensSliderH"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -45.0
+margin_bottom = -33.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 0 )
+text = "↔ Slide Sensitivity"
+align = 1
+
+[node name="SensSliderV" type="HSlider" parent="PauseBg"]
+material = SubResource( 17 )
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 34.0
+margin_top = -462.0
+margin_right = -33.0
+margin_bottom = -430.0
+min_value = -1.0
+max_value = 1.0
+step = 0.1
+
+[node name="Label2" type="Label" parent="PauseBg/SensSliderV"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -45.0
+margin_bottom = -33.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 0 )
+text = "↕ Shuffle Sensitivity"
+align = 1
+
+[connection signal="pressed" from="Bottom/NextWord" to="." method="_on_NextWord_pressed"]
+[connection signal="pressed" from="Bottom/PauseButton" to="." method="_on_PauseButton_pressed"]
+[connection signal="pressed" from="GameOverBg/RestartButton" to="." method="_on_RestartButton_pressed"]
+[connection signal="pressed" from="GameOverBg/RestartButton/OptionsButton" to="." method="_on_EndGameOptions_pressed"]
+[connection signal="pressed" from="PauseBg/RestartButton" to="." method="_on_RestartButton_pressed"]
+[connection signal="button_down" from="PauseBg/ResumeButton" to="." method="_on_ResumeButton_button_down"]
+[connection signal="pressed" from="PauseBg/ResumeButton" to="." method="_on_ResumeButton_pressed"]
+[connection signal="value_changed" from="PauseBg/SensSliderH" to="." method="_on_SensSliderH_value_changed"]
+[connection signal="value_changed" from="PauseBg/SensSliderV" to="." method="_on_SensSliderV_value_changed"]

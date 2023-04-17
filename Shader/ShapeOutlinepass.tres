@@ -1,0 +1,44 @@
+[gd_resource type="Shader" format=2]
+
+[resource]
+code = "shader_type spatial;
+render_mode cull_front, unshaded, skip_vertex_transform;
+const float shape_height = 1.0;
+
+uniform vec3 wobble = vec3(0,0,0);
+uniform float squish = 0.0;
+
+const float ym = 1.2; //Y mult
+
+void vertex() {
+	vec3 wv = (WORLD_MATRIX * vec4(VERTEX, 1.0)).xyz;
+	float outline_size = 0.02 * pow(wv.y+0.5, 0.5) * (1.0-squish);
+	if (wv.y < 0.0) outline_size = 0.0;
+	
+	VERTEX.xz *= 1.0 + outline_size;
+	if (VERTEX.y > 0.1) VERTEX.y += outline_size*ym;
+	else				VERTEX.y -= outline_size*ym;
+
+	
+		// Wobble anim/squish (MUST BE SAME AS OTHER)
+	VERTEX.y += (wobble * VERTEX).x + (wobble * VERTEX).z;
+	VERTEX.y -= squish;
+	if (VERTEX.y < 0.0) {
+		VERTEX.y = 0.0;
+	}
+	
+	VERTEX = (WORLD_MATRIX * vec4(VERTEX, 1.0)).xyz;
+
+	
+
+	//World
+	VERTEX.y -= 0.01;
+	
+	VERTEX = (INV_CAMERA_MATRIX * vec4(VERTEX, 1.0)).xyz;
+}
+
+void fragment() {
+	ALBEDO = vec3(1);
+}
+
+"

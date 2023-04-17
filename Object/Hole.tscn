@@ -1,0 +1,63 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://Script/ShapeHole.gd" type="Script" id=1]
+[ext_resource path="res://Shader/HolePass1.gdshader" type="Shader" id=2]
+[ext_resource path="res://Shader/HolePass2.gdshader" type="Shader" id=3]
+[ext_resource path="res://Shader/HolePass3.gdshader" type="Shader" id=4]
+[ext_resource path="res://Shader/HolePass4.gdshader" type="Shader" id=5]
+[ext_resource path="res://Shader/HolePass5.gdshader" type="Shader" id=6]
+
+[sub_resource type="CubeMesh" id=1]
+
+[sub_resource type="ShaderMaterial" id=13]
+shader = ExtResource( 6 )
+shader_param/inner = 1.0
+shader_param/outer = 1.03
+shader_param/shapeheight = 0.0
+shader_param/alpha = 1.0
+
+[sub_resource type="ShaderMaterial" id=12]
+render_priority = 13
+next_pass = SubResource( 13 )
+shader = ExtResource( 5 )
+shader_param/inner = 0.4
+shader_param/outer = 0.99
+shader_param/shapeheight = 0.0
+
+[sub_resource type="ShaderMaterial" id=9]
+resource_local_to_scene = true
+render_priority = 12
+next_pass = SubResource( 12 )
+shader = ExtResource( 4 )
+shader_param/shapeheight = 1.0
+shader_param/base_color = Plane( 0.5, 0.5, 0.5, 0 )
+shader_param/top_color = Plane( 0.5, 0.5, 0.5, 0 )
+shader_param/alpha = 0.0
+shader_param/fade = 1.0
+shader_param/dark_theme = false
+
+[sub_resource type="ShaderMaterial" id=10]
+resource_local_to_scene = true
+render_priority = 11
+next_pass = SubResource( 9 )
+shader = ExtResource( 3 )
+shader_param/inner = 0.1
+shader_param/outer = 1.0
+shader_param/shapeheight = 1.0
+
+[sub_resource type="ShaderMaterial" id=2]
+resource_local_to_scene = true
+render_priority = 10
+next_pass = SubResource( 10 )
+shader = ExtResource( 2 )
+shader_param/hole_color = Vector3( 0.5, 0.5, 0.5 )
+shader_param/base_color = Plane( 0.5, 0.5, 0.5, 0 )
+shader_param/top_color = Plane( 0.5, 0.5, 0.5, 0 )
+shader_param/alpha = 0.0
+
+[node name="MeshInstance" type="MeshInstance"]
+visible = false
+cast_shadow = 0
+mesh = SubResource( 1 )
+material/0 = SubResource( 2 )
+script = ExtResource( 1 )

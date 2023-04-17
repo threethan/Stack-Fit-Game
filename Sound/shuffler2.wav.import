@@ -1,0 +1,23 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/shuffler2.wav-6411690256aa378fee52e706eb4fbd6e.sample"
+
+[deps]
+
+source_file="res://Sound/shuffler2.wav"
+dest_files=[ "res://.import/shuffler2.wav-6411690256aa378fee52e706eb4fbd6e.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=true
+force/max_rate_hz=22050.0
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=1
