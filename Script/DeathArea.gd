@@ -28,7 +28,7 @@ func check_loss():
 
 
 var collapse_counter = 0
-const COLLAPSE_THRESH = 0.04
+const COLLAPSE_THRESH = 0.07
 func _physics_process(delta):
 	if pending_collapse:
 		collapse_counter += delta

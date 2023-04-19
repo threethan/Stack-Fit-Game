@@ -27,7 +27,7 @@ var scroll_cooldown = 0
 const SCROLL_DELAY = 0.14
 	
 func add_shape():
-	collapse_cooldown = 3
+	collapse_cooldown = 6
 	play_sound(("shuffle"if randi()%2==1 else "shuffler")+str(randi()%3))
 	if len(shapes) >= MAX_STACK_SIZE:
 		return
@@ -190,7 +190,7 @@ func _physics_process(_delta):
 
 func start_animating(offset, target):
 	var animating_shape
-	collapse_cooldown = 5
+	collapse_cooldown = 8
 	animating_shape = shapes[0]
 	if animating_shape.get_parent() == self:
 		remove_child(animating_shape)

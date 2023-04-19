@@ -6,6 +6,7 @@ render_mode cull_front, unshaded, skip_vertex_transform;
 const float shape_height = 1.0;
 
 uniform vec3 wobble = vec3(0,0,0);
+uniform vec4 color = vec4(0,0,0,0);
 uniform float squish = 0.0;
 
 const float ym = 1.2; //Y mult
@@ -38,7 +39,7 @@ void vertex() {
 }
 
 void fragment() {
-	ALBEDO = vec3(1);
+	ALBEDO = mix(color.rgb, vec3(1), 0.7);
 }
 
 "

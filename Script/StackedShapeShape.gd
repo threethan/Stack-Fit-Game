@@ -56,6 +56,7 @@ func _process(delta):
 
 func set_color(hue:float):
 	get_active_material(0).set_shader_param("color", Color.from_hsv(hue, 0.6, 1.0))
+	outline_shape.get_active_material(0).set_shader_param("color", Color.from_hsv(hue, 0.6, 1.0))
 	
 var anim_time_left = 0
 var target_scroll_pos := Vector3()
